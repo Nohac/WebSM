@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<title>WebSM test port</title>
+		<link rel="stylesheet" type="text/css" href="style/wsm.css">
+		<script src="lib/jquery-1.10.2.min.js"></script>
+		<script src="lib/kinetic-v4.7.4.js"></script>
+		<script src="lib/rgbcolor.js"></script>
+		<script src="lib/StackBlur.js"></script>
+		<script src="lib/canvg.js"></script>
+		<script src="src/wsmtest.js"></script>
+		
+		<script>
+			/*$(function(){
+				$.fn.xml = function(){
+					return (new XMLSerializer()).serializeToString($(this)[0]);
+				}
+				
+				var stage = new Kinetic.Stage({container: 'svgscene', width: $("body").width(), height: $("body").height()});
+				var layer = new Kinetic.Layer(); 
+				stage.add(layer);
+				
+				$.get("smarrow.svg",function(svg){
+					var img1 = $(svg.documentElement);
+					var img2 = $(svg.documentElement).clone();
+					//img1.find("#bgFill1").attr("style","stop-color:#111111");
+					//img2.find("#bgFill1").attr("style","stop-color:#ABABAB");
+					
+					//console.log(img1.find("#bgFill1").attr("style"));
+					//console.log(img2.find("#bgFill1").attr("style"));
+					
+					var bigsvg = img1.xml();
+					
+					var svge = document.createElement ('canvas');
+					svge.id = 'svg'; svge.width = 200; svge.height = 200;
+					canvg (svge, svg);
+					var posx = 0, posy = 0;
+					var arrow = new Kinetic.Shape({
+						x: 20, y: 20, offset: {x: 9, y:15},
+						drawFunc: function(canvas){
+							canvas.getCanvasContext().drawImage(svge,posx,posy);
+						}
+					});
+					
+					var imgsvg = img2.xml();
+					
+					var arrow2 = new Kinetic.Shape({
+						x: 0, y: 0, offset: {x: 0, y:0},
+						drawFunc: function(canvas){
+							canvas.getCanvasContext().drawSvg(imgsvg,0,0,60,60);
+						}
+					});
+					
+					arrow2.toImage({
+						// cached image will be 120 x 120
+						width: 60,
+						height: 60,
+						callback: function(img) {
+							for(var n = 0; n < 100; n++) {
+								var image = new Kinetic.Image({
+									image: img,
+									x: Math.random() * stage.getWidth(),
+									y: Math.random() * stage.getHeight(),
+									offset: 0,
+									draggable: true
+								});
+								console.log("dritt");
+								layer.add(image);
+								image.rotate(Math.random() * 10);
+								var tween2 = new Kinetic.Tween({
+									node: image, 
+									duration: Math.random() * 10,
+									y: 700
+								},layer);
+								
+								tween2.play();
+							}
+
+							layer.draw();
+						}
+					});
+					
+					//layer.add(arrow);
+					//layer.add(arrow2);
+					//layer.draw();
+					var velocity = 200;
+					var tween = new Kinetic.Animation(function(frame) {
+						//console.log(frame.timeDiff);
+						//var dist = velocity * (frame.timeDiff / 1000);
+						//arrow2.move(posx, 0);
+						posx+=10;
+						console.log(frame.frameRate);
+					},layer);
+					var tween2 = new Kinetic.Tween({
+						node: layer, 
+						duration: 2,
+						x: 0,
+						y: 700
+					},layer);
+					
+					setTimeout(function() {
+						//tween.start();
+						tween2.play();
+					}, 2000);
+				});	
+			});*/
+		</script>
+	</head>
+	<body>
+		<div id="songStage"></div>
+	</body>
+</html>
